@@ -247,3 +247,6 @@ body {
 .results-container.show {
     display: block;
 }
+.results-container.hidden {
+    display: none;
+}
