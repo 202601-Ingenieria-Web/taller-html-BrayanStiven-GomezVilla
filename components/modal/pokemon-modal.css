@@ -17,19 +17,25 @@
     width: 100%;
     max-width: 720px;
     max-height: 90vh;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
 }
 
 .pokemon-modal__header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     padding: 24px 24px 16px;
     border-bottom: 1px solid #e5e7eb;
+    background-color: #ffffff;
 }
 
 .pokemon-modal__title {
@@ -53,6 +59,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    overflow-y: auto;
 }
 
 .pokemon-modal__section {
@@ -79,33 +86,32 @@
     font-size: 0.95rem;
 }
 
-@media (max-width: 767px) {
-    .pokemon-modal-overlay {
-        padding: 12px;
-    }
+.pokemon-modal-detail {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+    align-items: center;
+}
 
-    .pokemon-modal {
-        border-radius: 18px;
-        max-height: 94vh;
-    }
+.pokemon-modal-detail__image {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
 
-    .pokemon-modal__header {
-        padding: 18px 18px 14px;
-    }
+.pokemon-modal-detail__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #2f3443;
+}
 
-    .pokemon-modal__title {
-        font-size: 1.3rem;
-    }
-
-    .pokemon-modal__body {
-        padding: 18px;
-    }
-
-    .pokemon-modal__close {
-        width: 38px;
-        height: 38px;
-        font-size: 1.25rem;
-    }
+.pokemon-modal-detail__info p {
+    line-height: 1.5;
+    word-break: break-word;
 }
 
 .pokemon-modal-evolutions {
@@ -136,4 +142,42 @@
     font-weight: 700;
     color: #2f3443;
     text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+    .pokemon-modal-overlay {
+        padding: 12px;
+    }
+
+    .pokemon-modal {
+        border-radius: 18px;
+        max-height: 94vh;
+    }
+
+    .pokemon-modal__header {
+        padding: 18px 18px 14px;
+    }
+
+    .pokemon-modal__title {
+        font-size: 1.3rem;
+    }
+
+    .pokemon-modal__body {
+        padding: 18px;
+    }
+
+    .pokemon-modal__close {
+        width: 38px;
+        height: 38px;
+        font-size: 1.25rem;
+    }
+
+    .pokemon-modal-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .pokemon-modal-detail__image {
+        max-width: 140px;
+        height: 140px;
+    }
 }

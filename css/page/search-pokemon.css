@@ -24,6 +24,10 @@ body {
     min-height: 100vh;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 .search-container,
 .results-container {
     width: min(100% - 32px, 900px);
@@ -118,6 +122,7 @@ body {
     color: #3b3f52;
     line-height: 1.1;
     word-break: break-word;
+    text-transform: capitalize;
 }
 
 .pokemon-img {
@@ -166,6 +171,44 @@ body {
     border-bottom: 1px solid #e8eaee;
     line-height: 1.5;
     word-break: break-word;
+}
+
+.open-modal-button {
+    width: 100%;
+    min-height: 54px;
+    border: 2px solid var(--color-accent);
+    border-radius: 16px;
+    background-color: #ffffff;
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 14px 18px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.open-modal-button:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(239, 75, 67, 0.2);
+}
+
+.open-modal-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.open-modal-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(239, 75, 67, 0.15);
+}
+
+.open-modal-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 @media (min-width: 768px) {
@@ -246,47 +289,7 @@ body {
     .pokemon-skills {
         font-size: 0.95rem;
     }
-}
 
-.open-modal-button {
-    width: 100%;
-    min-height: 54px;
-    border: none;
-    border-radius: 16px;
-    background-color: #ffffff;
-    color: var(--color-accent);
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 14px 18px;
-    border: 2px solid var(--color-accent);
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.open-modal-button:hover {
-    background-color: var(--color-accent);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(239, 75, 67, 0.2);
-}
-
-.open-modal-button:active {
-    transform: translateY(0);
-    box-shadow: none;
-}
-
-.open-modal-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(239, 75, 67, 0.15);
-}
-
-.open-modal-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-@media (max-width: 480px) {
     .open-modal-button {
         min-height: 50px;
         font-size: 0.95rem;

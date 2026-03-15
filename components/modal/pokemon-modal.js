@@ -34,6 +34,7 @@ export function openPokemonModal() {
     }
 
     overlay.classList.add('show');
+    document.body.classList.add('modal-open');
 }
 
 export function closePokemonModal() {
@@ -44,6 +45,7 @@ export function closePokemonModal() {
     }
 
     overlay.classList.remove('show');
+    document.body.classList.remove('modal-open');
 }
 
 export function setPokemonModalData({ pokemon, evolutions }) {
