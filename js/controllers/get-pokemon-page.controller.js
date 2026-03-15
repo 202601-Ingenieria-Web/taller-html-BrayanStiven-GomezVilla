@@ -20,14 +20,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 searchButton.addEventListener('click', async () => {
     try {
         const pokemon = await getPokemon(searchInput.value);
+
         pokemonName.textContent = pokemon.name;
         pokemonImage.src = pokemon.image;
         pokemonImage.alt = pokemon.name;
-        pokemonType.textContent = pokemon.type;
+        pokemonType.textContent = pokemon.types.join(', ');
         pokemonId.textContent = `ID: ${pokemon.id}`;
         pokemonHeight.textContent = `Altura: ${pokemon.height}`;
         pokemonSkills.textContent = `Habilidades: ${pokemon.skills}`;
+
         resultsContainer.classList.add('show');
+
         showToast({
             type: 'success',
             title: '¡Encontrado!',
@@ -35,6 +38,7 @@ searchButton.addEventListener('click', async () => {
         });
     } catch (error) {
         resultsContainer.classList.remove('show');
+
         showToast({
             type: 'error',
             title: 'Upss! Ha ocurrido un error',
