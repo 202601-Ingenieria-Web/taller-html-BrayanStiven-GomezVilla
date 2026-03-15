@@ -2,6 +2,12 @@
 
 Mini aplicación web desarrollada con **HTML, CSS y JavaScript** que consume la **PokéAPI** para buscar Pokémon por nombre y mostrar un listado dinámico paginado de Pokémon en tarjetas.
 
+## Demo
+
+[![Ver proyecto](https://img.shields.io/badge/Ver%20proyecto-GitHub%20Pages-2ea44f?style=for-the-badge)](https://202601-ingenieria-web.github.io/taller-html-BrayanStiven-GomezVilla/pages/search-pokemon.html)
+
+
+
 ## Propósito del proyecto
 
 El objetivo de este proyecto es aplicar de forma práctica los conocimientos de **HTML, CSS y JavaScript**, consumiendo una **API pública** para construir una aplicación web interactiva. En este caso se utilizó **PokéAPI** como fuente de datos.
