@@ -128,29 +128,6 @@ Páginas principales del proyecto:
 - `search-pokemon.html`: búsqueda individual de Pokémon.
 - `pokemon-list.html`: listado paginado de Pokémon.
 
-## Cómo ejecutar el proyecto
-
-Como el proyecto usa módulos de JavaScript y carga componentes HTML de forma dinámica, se recomienda ejecutarlo con un servidor local.
-
-### Opción 1: Live Server en VS Code
-1. Abrir la carpeta del proyecto en VS Code.
-2. Instalar la extensión **Live Server**.
-3. Hacer clic derecho sobre `index.html`.
-4. Seleccionar **Open with Live Server**.
-
-### Opción 2: servidor local con Python
-Desde la raíz del proyecto ejecutar:
-
-```bash
-python -m http.server 5500
-```
-
-Luego abrir en el navegador:
-
-```bash
-http://localhost:5500
-```
-
 ## Navegación de la aplicación
 
 La aplicación cuenta con dos secciones principales:
