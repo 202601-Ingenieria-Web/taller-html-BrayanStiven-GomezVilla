@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Pokémon</title>
+    <link rel="stylesheet" href="../css/page/pokemon-list.css">
+    <link rel="stylesheet" href="../components/header/header.css">
+    <link rel="stylesheet" href="../components/toast/toast.css">
+    <link rel="stylesheet" href="../components/modal/pokemon-modal.css">
+    <link rel="stylesheet" href="../components/pokemon-card/pokemon-card.css">
+    <script type="module" src="../js/controllers/pokemon-list.controller.js"></script>
+</head>
+<body>
+    <div id="headerContainer"></div>
+
+    <main class="pokemon-list-page">
+        <section class="pokemon-list-section">
+            <div class="pokemon-list-section__header">
+                <h1 class="pokemon-list-section__title">Pokemones</h1>
+                <p class="pokemon-list-section__meta" id="pokemonListMeta">
+                    Cargando Pokémones...
+                </p>
+            </div>
+
+            <div id="pokemonCardsContainer" class="pokemon-cards-container"></div>
+
+            <div class="pokemon-list-pagination">
+                <button id="previousPageButton" class="pagination-button" type="button">
+                    Anterior
+                </button>
+
+                <span id="currentPageIndicator" class="pagination-indicator">
+                    Página 1
+                </span>
+
+                <button id="nextPageButton" class="pagination-button" type="button">
+                    Siguiente
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="pokemonCardTemplateContainer"></div>
+    <div id="pokemonModalContainer"></div>
+    <div id="toastContainer"></div>
+</body>
+</html>

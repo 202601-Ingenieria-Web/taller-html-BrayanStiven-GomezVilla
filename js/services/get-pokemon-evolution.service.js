@@ -1,8 +1,5 @@
 import { getPokemonByName } from '../api/get-pokemon-api.js';
-import {
-    getPokemonSpeciesByUrl,
-    getEvolutionChainByUrl
-} from '../api/get-pokemon-evolution-api.js';
+import {getPokemonSpeciesByUrl, getEvolutionChainByUrl} from '../api/get-pokemon-evolution-api.js';
 import { PokemonEvolution } from '../../models/pokemon-evolution.model.js';
 
 function extractEvolutionNames(chain) {
