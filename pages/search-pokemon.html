@@ -12,6 +12,7 @@
 </head>
 <body>
     <div id="headerContainer"></div>
+
     <div class="search-container">
         <h1>Buscar por nombre</h1>
         <input type="text" id="searchInput" placeholder="Ingrese el nombre del Pokémon...">
@@ -20,19 +21,25 @@
 
     <div id="resultsContainer" class="results-container">
         <h2>Resultados</h2>
+
         <div class="pokemon-info">
             <h3 id="pokemonName" class="pokemon-name">Nombre del Pokémon</h3>
             <img id="pokemonImage" class="pokemon-img" alt="Imagen del Pokémon">
+
             <div class="pokemon-type">
                 <span id="pokemonType" class="badge normal">No definido</span>
             </div>
+
             <p id="pokemonId" class="pokemon-id">ID:</p>
             <p id="pokemonHeight" class="pokemon-height">Altura:</p>
             <p id="pokemonSkills" class="pokemon-skills">Habilidades:</p>
+
             <button id="openPokemonModalButton" class="open-modal-button" type="button">
                 Ver detalle
             </button>
+        </div>
     </div>
+
     <div id="pokemonModalContainer"></div>
     <div id="toastContainer"></div>
 </body>
