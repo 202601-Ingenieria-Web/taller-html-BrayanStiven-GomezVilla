@@ -1,5 +1,6 @@
 import { getPokemon } from '../services/get-pokemon.service.js';
-import { loadToast, showToast } from '../../components/toast.js';
+import { loadToast, showToast } from '../../components/toast/toast.js';
+import { loadHeader } from '../../components/header/header.js';
 
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
@@ -12,6 +13,7 @@ const pokemonHeight = document.getElementById('pokemonHeight');
 const pokemonSkills = document.getElementById('pokemonSkills');
 
 document.addEventListener('DOMContentLoaded', async () => {
+    await loadHeader();
     await loadToast();
 });
 

@@ -1,0 +1,106 @@
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #ef4b43;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.app-header__content {
+    width: min(100% - 32px, 1100px);
+    margin: 0 auto;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.app-header__brand {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.app-header__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.app-header__toggle-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ffffff;
+    border-radius: 999px;
+    transition: 0.2s ease;
+}
+
+.app-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.app-header__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.app-header__link:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 767px) {
+    .app-header__content {
+        width: min(100% - 24px, 1100px);
+        min-height: 64px;
+        position: relative;
+    }
+
+    .app-header__toggle {
+        display: inline-block;
+    }
+
+    .app-header__nav {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .app-header__nav.is-open {
+        display: flex;
+    }
+
+    .app-header__link {
+        color: #2f3443;
+        background-color: #f3f4f6;
+        border-radius: 12px;
+    }
+
+    .app-header__link:hover {
+        background-color: #e9ebef;
+    }
+}

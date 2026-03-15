@@ -5,7 +5,7 @@ export async function loadToast() {
         throw new Error('No se encontró el contenedor del toast');
     }
 
-    const response = await fetch('../components/toast.html');
+    const response = await fetch('../components/toast/toast.html');
     const toastHtml = await response.text();
 
     container.innerHTML = toastHtml;
