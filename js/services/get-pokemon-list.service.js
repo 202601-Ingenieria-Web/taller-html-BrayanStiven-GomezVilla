@@ -10,6 +10,8 @@ export async function getPokemonList(page, pageSize) {
         throw new Error('No se pudo obtener la lista de Pokémon');
     }
 
+    // Fetches the current page and then loads each Pokemon detail
+    // to return a complete list mapped to the domain model.
     const pokemonDetails = await Promise.all(
         pageData.results.map((pokemonItem) => getPokemonByName(pokemonItem.name))
     );

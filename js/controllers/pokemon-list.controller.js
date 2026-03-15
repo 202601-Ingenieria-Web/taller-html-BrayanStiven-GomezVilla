@@ -52,6 +52,8 @@ nextPageButton.addEventListener('click', async () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// Loads the current page data and updates the list,
+// pagination state, and visible page information.
 async function renderPage() {
     try {
         pokemonListMeta.textContent = 'Cargando Pokémon...';
@@ -81,6 +83,8 @@ async function renderPage() {
     }
 }
 
+// Shows or hides pagination buttons
+// depending on the current available pages.
 function renderPaginationButtons() {
     if (currentPage === 1) {
         previousPageButton.classList.add('hidden');
@@ -95,6 +99,8 @@ function renderPaginationButtons() {
     }
 }
 
+// Loads the selected pokemon details and evolution data
+// before opening the modal with the combined information.
 async function handlePokemonDetail(pokemonCardData) {
     try {
         const pokemon = await getPokemon(pokemonCardData.name);

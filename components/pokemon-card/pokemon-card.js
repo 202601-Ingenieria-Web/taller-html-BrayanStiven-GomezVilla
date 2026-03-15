@@ -1,5 +1,7 @@
 let pokemonCardTemplate = null;
 
+// Loads the card template from the component file
+// and stores it for later card creation.
 export async function loadPokemonCardTemplate() {
     const container = document.getElementById('pokemonCardTemplateContainer');
 
@@ -50,6 +52,8 @@ export function createPokemonCard(pokemon, onDetailClick) {
     return cardElement;
 }
 
+// Clears the container and renders each pokemon card,
+// or shows an empty state when there is no data.
 export function renderPokemonCards(container, pokemons, onDetailClick) {
     if (!container) {
         throw new Error('No se encontró el contenedor de cards');

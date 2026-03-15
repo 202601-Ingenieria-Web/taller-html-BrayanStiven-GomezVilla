@@ -1,3 +1,5 @@
+// Loads the modal template into the page
+// and connects the close actions for the overlay and button.
 export async function loadPokemonModal() {
     const container = document.getElementById('pokemonModalContainer');
 
@@ -48,6 +50,8 @@ export function closePokemonModal() {
     document.body.classList.remove('modal-open');
 }
 
+// Fills the modal sections with the selected pokemon data
+// and renders the evolution cards from the provided list.
 export function setPokemonModalData({ pokemon, evolutions }) {
     const titleElement = document.getElementById('pokemonModalTitle');
     const detailElement = document.getElementById('pokemonModalContent');

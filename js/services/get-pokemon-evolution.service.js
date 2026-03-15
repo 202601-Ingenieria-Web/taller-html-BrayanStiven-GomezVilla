@@ -1,7 +1,9 @@
 import { getPokemonByName } from '../api/get-pokemon-api.js';
-import {getPokemonSpeciesByUrl, getEvolutionChainByUrl} from '../api/get-pokemon-evolution-api.js';
+import { getPokemonSpeciesByUrl, getEvolutionChainByUrl } from '../api/get-pokemon-evolution-api.js';
 import { PokemonEvolution } from '../../models/pokemon-evolution.model.js';
 
+// Traverses the main evolution path and collects each species name
+// by following the first available evolution in the chain.
 function extractEvolutionNames(chain) {
     const evolutions = [];
     let currentEvolution = chain;
@@ -14,6 +16,8 @@ function extractEvolutionNames(chain) {
     return evolutions;
 }
 
+// Resolves the pokemon species and evolution chain URLs
+// to build the final evolution list with complete pokemon data.
 export async function getPokemonEvolution(name) {
     const pokemonData = await getPokemonByName(name);
 

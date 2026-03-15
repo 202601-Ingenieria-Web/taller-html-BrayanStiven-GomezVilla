@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadPokemonModal();
 });
 
+// Searches the pokemon by name and updates
+// the result section with the fetched data.
 searchButton.addEventListener('click', async () => {
     try {
         const pokemon = await getPokemon(searchInput.value);
@@ -59,6 +61,8 @@ searchButton.addEventListener('click', async () => {
     }
 });
 
+// Loads the evolution data for the current pokemon
+// and opens the modal with the complete detail view.
 openPokemonModalButton.addEventListener('click', async () => {
     try {
         if (!currentPokemon) {

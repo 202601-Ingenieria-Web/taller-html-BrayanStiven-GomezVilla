@@ -1,3 +1,5 @@
+// Loads the toast template into the container
+// and connects the close action to hide it.
 export async function loadToast() {
     const container = document.getElementById('toastContainer');
 

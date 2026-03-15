@@ -1,3 +1,5 @@
+// Loads the header template into the page
+// and connects the toggle action for mobile navigation.
 export async function loadHeader() {
     const container = document.getElementById('headerContainer');
 
