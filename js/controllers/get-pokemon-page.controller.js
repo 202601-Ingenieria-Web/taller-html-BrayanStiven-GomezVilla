@@ -1,11 +1,7 @@
 import { getPokemon } from '../services/get-pokemon.service.js';
 import { getPokemonEvolution } from '../services/get-pokemon-evolution.service.js';
 import { loadToast, showToast } from '../../components/toast/toast.js';
-import {
-    loadPokemonModal,
-    openPokemonModal,
-    setPokemonModalData
-} from '../../components/modal/pokemon-modal.js';
+import { loadPokemonModal, openPokemonModal, setPokemonModalData } from '../../components/modal/pokemon-modal.js';
 import { loadHeader } from '../../components/header/header.js';
 
 const searchButton = document.getElementById('searchButton');
@@ -29,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Searches the pokemon by name and updates
 // the result section with the fetched data.
-searchButton.addEventListener('click', async () => {
+async function searchPokemon() {
     try {
         const pokemon = await getPokemon(searchInput.value);
         currentPokemon = pokemon;
@@ -58,6 +54,14 @@ searchButton.addEventListener('click', async () => {
             title: 'Upss! Ha ocurrido un error',
             message: error.message
         });
+    }
+}
+
+searchButton.addEventListener('click', searchPokemon);
+
+searchInput.addEventListener('keydown', async (event) => {
+    if (event.key === 'Enter') {
+        await searchPokemon();
     }
 });
 
