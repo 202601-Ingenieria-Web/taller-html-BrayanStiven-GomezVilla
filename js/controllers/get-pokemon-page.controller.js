@@ -1,5 +1,11 @@
 import { getPokemon } from '../services/get-pokemon.service.js';
+import { getPokemonEvolution } from '../services/get-pokemon-evolution.service.js';
 import { loadToast, showToast } from '../../components/toast/toast.js';
+import {
+    loadPokemonModal,
+    openPokemonModal,
+    setPokemonModalData
+} from '../../components/modal/pokemon-modal.js';
 import { loadHeader } from '../../components/header/header.js';
 
 const searchButton = document.getElementById('searchButton');
@@ -11,15 +17,20 @@ const pokemonType = document.getElementById('pokemonType');
 const pokemonId = document.getElementById('pokemonId');
 const pokemonHeight = document.getElementById('pokemonHeight');
 const pokemonSkills = document.getElementById('pokemonSkills');
+const openPokemonModalButton = document.getElementById('openPokemonModalButton');
+
+let currentPokemon = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadHeader();
     await loadToast();
+    await loadPokemonModal();
 });
 
 searchButton.addEventListener('click', async () => {
     try {
         const pokemon = await getPokemon(searchInput.value);
+        currentPokemon = pokemon;
 
         pokemonName.textContent = pokemon.name;
         pokemonImage.src = pokemon.image;
@@ -37,11 +48,35 @@ searchButton.addEventListener('click', async () => {
             message: 'Pokémon encontrado exitosamente.'
         });
     } catch (error) {
+        currentPokemon = null;
         resultsContainer.classList.remove('show');
 
         showToast({
             type: 'error',
             title: 'Upss! Ha ocurrido un error',
+            message: error.message
+        });
+    }
+});
+
+openPokemonModalButton.addEventListener('click', async () => {
+    try {
+        if (!currentPokemon) {
+            throw new Error('Primero debes buscar un Pokémon');
+        }
+
+        const evolutionData = await getPokemonEvolution(currentPokemon.name);
+
+        setPokemonModalData({
+            pokemon: currentPokemon,
+            evolutions: evolutionData.evolutions
+        });
+
+        openPokemonModal();
+    } catch (error) {
+        showToast({
+            type: 'error',
+            title: 'No se pudo abrir el modal',
             message: error.message
         });
     }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/page/search-pokemon.css">
     <link rel="stylesheet" href="../components/toast/toast.css">
     <link rel="stylesheet" href="../components/header/header.css">
+    <link rel="stylesheet" href="../components/modal/pokemon-modal.css">
     <script type="module" src="../js/controllers/get-pokemon-page.controller.js"></script>
 </head>
 <body>
@@ -28,8 +29,11 @@
             <p id="pokemonId" class="pokemon-id">ID:</p>
             <p id="pokemonHeight" class="pokemon-height">Altura:</p>
             <p id="pokemonSkills" class="pokemon-skills">Habilidades:</p>
-        </div>
+            <button id="openPokemonModalButton" class="open-modal-button" type="button">
+                Ver detalle
+            </button>
     </div>
+    <div id="pokemonModalContainer"></div>
     <div id="toastContainer"></div>
 </body>
 </html>
